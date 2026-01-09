@@ -1,84 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Your Name | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-            line-height: 1.6;
-        }
-        header {
-            background: #333;
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-        section {
-            padding: 30px;
-            background: white;
-            margin: 20px;
-            border-radius: 5px;
-        }
-        h2 {
-            color: #333;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: white;
-        }
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name | Portfolio</title>
+
+<style>
+:root {
+  --primary: #2563eb;
+  --dark: #0f172a;
+  --light: #f8fafc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(120deg, #2563eb, #1e40af);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  animation: fadeDown 1s ease;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  animation: fadeUp 1.5s ease;
+}
+
+.hero button {
+  margin-top: 25px;
+  padding: 12px 30px;
+  border: none;
+  background: white;
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  animation: fadeUp 2s ease;
+}
+
+.hero button:hover {
+  background: #e0e7ff;
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 10%;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+/* ABOUT */
+.about {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* SKILLS */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.skill {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.skill:hover {
+  transform: translateY(-8px);
+}
+
+/* PROJECTS */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.project {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.project:hover {
+  transform: scale(1.05);
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+}
+
+.contact a {
+  display: inline-block;
+  margin-top: 15px;
+  color: white;
+  background: var(--primary);
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  nav {
+    padding: 15px 20px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-<header>
-    <h1>Your Name</h1>
-    <p>Student | Professional | Aspiring ______</p>
-</header>
+<nav>
+  <strong>YourName</strong>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-<section>
-    <h2>About Me</h2>
-    <p>
-        I am from a non-technical background and currently building my skills.
-        This portfolio showcases my work and interests.
-    </p>
+<div class="hero">
+  <div>
+    <h1>Hi, I'm Your Name</h1>
+    <p>Non-Technical Professional | Aspiring ______</p>
+    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+      Contact Me
+    </button>
+  </div>
+</div>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p class="about">
+    I come from a non-technical background and I am building my professional
+    portfolio. I enjoy learning new tools and applying them to real-world problems.
+  </p>
 </section>
 
-<section>
-    <h2>Skills</h2>
-    <ul>
-        <li>Communication</li>
-        <li>MS Excel</li>
-        <li>Research</li>
-        <li>Canva</li>
-    </ul>
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill">Communication</div>
+    <div class="skill">MS Excel</div>
+    <div class="skill">Research & Analysis</div>
+    <div class="skill">Canva / Design</div>
+  </div>
 </section>
 
-<section>
-    <h2>Projects</h2>
-    <ul>
-        <li>Portfolio Website using GitHub Pages</li>
-        <li>Academic / Personal Project</li>
-    </ul>
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="project">
+      <h3>Portfolio Website</h3>
+      <p>Personal portfolio built using GitHub Pages.</p>
+    </div>
+    <div class="project">
+      <h3>Case Study</h3>
+      <p>Academic or professional case study project.</p>
+    </div>
+  </div>
 </section>
 
-<section>
-    <h2>Contact</h2>
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact">
     <p>Email: yourname@email.com</p>
-    <p>LinkedIn: <a href="#">Your LinkedIn Profile</a></p>
+    <a href="resume.pdf" target="_blank">Download Resume</a>
+  </div>
 </section>
 
 <footer>
-    <p>© 2026 Your Name</p>
+  <p>© 2026 Your Name. All rights reserved.</p>
 </footer>
 
 </body>
