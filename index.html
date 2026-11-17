@@ -3,528 +3,291 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kajal Bhojwani | Data Analyst Portfolio</title>
-<meta name="description" content="Kajal Bhojwani, Data Analyst skilled in SQL, Python, Excel and Power BI.">
+<title>Your Name | Professional Portfolio</title>
 
 <!-- ICONS -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<!-- AOS Animation Library -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #f5ede3;
-  --bg2: #ede3d8;
+  --bg: #f6f1eb;
   --card: #ffffff;
   --accent: #c4a484;
-  --accent-dark: #a9835f;
   --text-dark: #3a3a3a;
   --text-light: #7a7a7a;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
   color: var(--text-dark);
   line-height: 1.7;
-  background-color: var(--bg);
-  /* business-analyst style backdrop: soft warm glows + faint chart grid */
-  background-image:
-    radial-gradient(900px 500px at 95% -5%, rgba(196,164,132,.28), transparent 60%),
-    radial-gradient(800px 500px at -10% 35%, rgba(233,200,160,.30), transparent 60%),
-    linear-gradient(rgba(150,115,80,.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(150,115,80,.06) 1px, transparent 1px);
-  background-size: auto, auto, 44px 44px, 44px 44px;
-  background-attachment: fixed;
 }
 
 /* NAV */
 nav {
-  position: fixed; top: 0; width: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
   background: rgba(246,241,235,0.95);
-  backdrop-filter: blur(8px);
   padding: 15px 8%;
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   z-index: 1000;
-  box-shadow: 0 2px 12px rgba(120,90,60,.08);
 }
-nav a { margin-left: 25px; text-decoration: none; color: var(--text-dark); font-weight: 600; transition: color .2s; }
-nav a:hover { color: var(--accent-dark); }
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
 
 /* HERO */
 .hero {
-  min-height: 100vh;
-  display: flex; align-items: center; justify-content: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 60px;
-  padding: 120px 10% 80px;
-  flex-direction: row-reverse;
+  padding: 120px 10%;
 }
-.hero h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.1; }
-.hero h1 span { color: var(--accent-dark); }
-.hero .role { margin-top: 12px; color: var(--text-light); font-size: 1.05rem; }
-.hero .intro { margin-top: 14px; color: var(--text-light); max-width: 460px; font-size: .98rem; }
-.hero-btns { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 12px; }
-.btn {
-  display: inline-block; padding: 10px 26px;
-  border: 1.5px solid var(--text-dark); border-radius: 4px;
-  color: var(--text-dark); text-decoration: none;
-  font-weight: 600; font-size: .92rem; transition: all .2s;
-}
-.btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
-.btn.fill { background: var(--text-dark); color: #fff; }
-.btn.fill:hover { background: var(--accent); border-color: var(--accent); }
 
 .hero img {
-  width: 300px; height: 370px;
-  object-fit: cover; object-position: top;
-  border-radius: 12px;
-  box-shadow: 0 20px 48px rgba(0,0,0,0.12);
-  outline: 2px solid rgba(196,164,132,.55); outline-offset: 12px;
+  width: 260px;
+  border-radius: 50%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* ROLE GRAPHICS */
-.role-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 26px; max-width: 900px; margin: 0 auto 50px; }
-.role-pair img { width: 100%; height: auto; border-radius: 18px; box-shadow: 0 18px 40px rgba(120,90,60,.16); transition: transform .3s; }
-.role-pair img:hover { transform: translateY(-6px); }
+.hero h1 {
+  font-size: 3rem;
+}
 
-/* TOP WORK */
-.work-head { text-align: center; max-width: 640px; margin: 0 auto 60px; }
-.work-head h2 { margin-bottom: 14px; }
-.work-head p { color: var(--text-light); }
-.work-item { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; max-width: 1100px; margin: 0 auto 90px; }
-.work-item:last-child { margin-bottom: 0; }
-.work-item.rev .work-body { order: 2; }
-.work-num { color: var(--accent-dark); font-weight: 700; letter-spacing: 1.5px; font-size: .85rem; text-transform: uppercase; }
-.work-label { display: inline-block; margin-left: 10px; padding: 2px 10px; border-radius: 99px; background: rgba(196,164,132,.25); color: var(--accent-dark); font-size: .72rem; letter-spacing: .5px; }
-.work-body h3 { font-size: 1.9rem; line-height: 1.2; margin: 10px 0 8px; }
-.work-ctx { color: var(--text-light); font-size: .92rem; margin-bottom: 14px; }
-.work-body > p { color: var(--text-dark); margin-bottom: 14px; }
-.work-body h4 { font-size: .78rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent-dark); margin-top: 14px; }
-.work-body h4 + p { color: var(--text-light); font-size: .95rem; }
-.work-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; list-style: none; }
-.work-tags li { background: var(--card); border: 1px solid #e5d8c8; padding: 4px 13px; border-radius: 99px; font-size: .82rem; font-weight: 600; }
-.visual { position: relative; border-radius: 18px; aspect-ratio: 4/3; overflow: hidden; background: linear-gradient(135deg,#f0dcc6,#d6b48d); box-shadow: 0 20px 44px rgba(120,90,60,.18); }
-.visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; }
-.visual .fb { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; color: #fff; padding: 20px; text-align: center; }
-.visual .fb i { font-size: 3.8rem; opacity: .95; }
-.visual .metrics { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-.visual .m { background: rgba(255,255,255,.9); color: var(--text-dark); padding: 6px 14px; border-radius: 99px; font-weight: 600; font-size: .85rem; }
+.hero p {
+  margin-top: 15px;
+  color: var(--text-light);
+  max-width: 450px;
+}
 
 /* SECTIONS */
-section { padding: 90px 10%; }
-h2 { text-align: center; margin-bottom: 50px; font-size: 2.2rem; }
-h2::after { content: ""; display: block; width: 60px; height: 3px; background: var(--accent); margin: 12px auto 0; border-radius: 3px; }
+section {
+  padding: 90px 10%;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.2rem;
+}
 
 /* ABOUT */
-.about-text { max-width: 760px; margin: 0 auto 40px; text-align: center; font-size: 1.08rem; color: var(--text-light); min-height: 110px; }
-.about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 25px; }
-.about-card { background: var(--card); padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
-.about-card i { font-size: 2rem; color: var(--accent); margin-bottom: 15px; }
-.about-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
-.about-card p { font-size: .92rem; color: var(--text-light); }
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 25px;
+}
+
+.about-card {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+.about-card i {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
 
 /* EXPERIENCE */
-.timeline { max-width: 850px; margin: auto; }
-.job { background: var(--card); padding: 25px; border-left: 5px solid var(--accent); margin-bottom: 25px; border-radius: 8px; box-shadow: 0 10px 24px rgba(0,0,0,0.06); }
-.job h3 { font-size: 1.15rem; }
-.job .org { color: var(--accent-dark); font-weight: 600; margin-bottom: 4px; }
-.job .date { color: var(--text-light); font-style: italic; font-size: .9rem; margin-bottom: 10px; display: block; }
-.job ul { padding-left: 20px; color: var(--text-light); font-size: .95rem; }
-.job li { margin-bottom: 6px; }
+.timeline {
+  max-width: 800px;
+  margin: auto;
+}
+
+.job {
+  background: var(--card);
+  padding: 25px;
+  border-left: 5px solid var(--accent);
+  margin-bottom: 25px;
+  border-radius: 8px;
+}
 
 /* SKILLS */
-.skill-group { max-width: 1000px; margin: 0 auto 40px; }
-.skill-group h3 { text-align: center; margin-bottom: 20px; color: var(--accent-dark); font-size: 1.05rem; letter-spacing: 1px; text-transform: uppercase; }
-.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 20px; }
-.skill { background: var(--card); padding: 22px 12px; text-align: center; border-radius: 15px; box-shadow: 0 10px 24px rgba(0,0,0,0.06); font-size: .92rem; font-weight: 600; transition: transform .3s; }
-.skill:hover { transform: translateY(-6px); }
-.skill img { width: 38px; height: 38px; display: block; margin: 0 auto 10px; }
-.skill i { font-size: 2rem; color: var(--accent); display: block; margin-bottom: 10px; }
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+  gap: 25px;
+}
+
+.skill {
+  background: var(--card);
+  padding: 25px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.skill img {
+  width: 40px;
+  margin-bottom: 10px;
+}
 
 /* PROJECTS */
-.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px,1fr)); gap: 30px; max-width: 1100px; margin: auto; }
-.project { background: var(--card); padding: 28px; border-radius: 15px; text-decoration: none; color: inherit; box-shadow: 0 15px 30px rgba(0,0,0,0.08); transition: transform .3s; display: block; }
-.project:hover { transform: translateY(-8px); }
-.project i { font-size: 1.6rem; color: var(--accent); margin-bottom: 12px; display: block; }
-.project h3 { margin-bottom: 8px; }
-.project p { color: var(--text-light); font-size: .95rem; }
-.project .more { display: inline-block; margin-top: 14px; color: var(--accent-dark); font-weight: 600; font-size: .9rem; }
-.project .soon { display: inline-block; margin-top: 14px; color: var(--text-light); font-size: .85rem; font-style: italic; }
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 30px;
+}
 
-/* EDUCATION & CERTS */
-.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 25px; max-width: 1050px; margin: auto; }
-.panel { background: var(--card); padding: 28px; border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
-.panel h3 { margin-bottom: 14px; color: var(--accent-dark); }
-.panel div, .panel p { padding: 9px 0; border-bottom: 1px dashed #e5d8c8; font-size: .95rem; }
-.panel div:last-child, .panel p:last-child { border: 0; }
-.panel b { display: block; }
-.panel span { color: var(--text-light); font-size: .9rem; }
+.project {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.project:hover {
+  transform: translateY(-8px);
+}
+
+/* CERTIFICATIONS */
+.certs {
+  text-align: center;
+}
+
+.certs p {
+  margin-bottom: 10px;
+}
 
 /* CONTACT */
-footer { background: #e9dfd6; text-align: center; padding: 60px 8% 40px; }
-footer h2 { margin-bottom: 24px; font-size: 1.9rem; }
-footer p { margin-bottom: 20px; color: var(--text-light); }
-.socials { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-bottom: 26px; }
-.copy { font-size: .85rem; color: var(--text-light); margin: 0; }
+footer {
+  background: #e9dfd6;
+  text-align: center;
+  padding: 40px;
+}
 
 /* RESPONSIVE */
 @media(max-width: 768px){
-  nav a { margin-left: 12px; font-size: .85rem; }
-  nav strong { display: none; }
-  nav { justify-content: center; padding: 12px 4%; }
-  .hero { flex-direction: column; text-align: center; padding-top: 110px; }
-  .hero h1 { font-size: 2.6rem; }
-  .hero-btns { justify-content: center; }
-  .hero img { width: 250px; height: 310px; }
-  section { padding: 70px 6%; }
-  .work-item { grid-template-columns: 1fr; gap: 28px; margin-bottom: 70px; }
-  .work-item.rev .work-body { order: 0; }
-  .work-body h3 { font-size: 1.5rem; }
-}
-
-/* SCROLL PROGRESS */
-#progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: linear-gradient(90deg, var(--accent), var(--accent-dark)); z-index: 1100; }
-
-/* ROTATING ROLE */
-#role-text { display: inline-block; transition: opacity .4s ease, transform .4s ease; }
-#role-text.fade-out { opacity: 0; transform: translateY(6px); }
-
-/* PAGE-LOAD INTRO */
-@keyframes introUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
-.hero h1 { animation: introUp .8s ease both; }
-.hero .role { animation: introUp .8s .15s ease both; }
-.hero .intro { animation: introUp .8s .3s ease both; }
-.hero-btns { animation: introUp .8s .45s ease both; }
-
-/* REDUCED MOTION */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div id="progress"></div>
-
 <nav>
-  <strong>Kajal Bhojwani</strong>
+  <strong>YourName</strong>
   <div>
-    <a href="#work">Top Work</a>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <div data-aos="fade-up" data-aos-delay="200">
-    <h1>Hello, I'm<br><span>Kajal Bhojwani!</span></h1>
-    <p class="role"><span id="role-text">Data Analyst</span></p>
-    <p class="intro">I aim to understand business challenges, translate stakeholder requirements into effective solutions, and leverage data and technology to improve processes and support strategic decision-making.</p>
-    <div class="hero-btns">
-      <a href="#contact" class="btn">Contact Me</a>
-      <a href="#projects" class="btn">View Projects</a>
-      <a href="Kajal_Bhojwani_Resume.pdf" class="btn fill" download>Download Resume</a>
-    </div>
+  <img src="profile.png" alt="Profile Photo">
+  <div>
+    <h1>Your Name</h1>
+    <p>Business Analyst | Data & Insights Professional</p>
   </div>
-  <img src="profile.png" alt="Kajal Bhojwani" data-aos="fade-up">
 </div>
-
-<!-- TOP WORK -->
-<section id="work">
-  <div class="work-head" data-aos="fade-up">
-    <h2>Top Work</h2>
-    <p>Three pieces of work I'm proudest of, across dashboards, testing and data quality.</p>
-  </div>
-
-  <article class="work-item">
-    <div class="work-body" data-aos="fade-up">
-      <span class="work-num">01 / Funding Scheme Dashboard</span>
-      <h3>A Power BI dashboard a sales team adopted.</h3>
-      <div class="work-ctx">Data Intern (Business &amp; Research Analyst) @ ConzultupIndia · Apr – Aug 2025</div>
-      <p>An interactive dashboard for filtering funding schemes in real time by eligibility, sector and funding stage, replacing manual reporting.</p>
-      <h4>My role</h4>
-      <p>Built the DAX measures, calculated columns and slicers, and connected the funding tracker (moved from Excel to Google Sheets) to Power BI through live Google Drive integration.</p>
-      <h4>Outcome</h4>
-      <p>Adopted by a 4–10 person sales team, saving several hours of manual reporting every week.</p>
-      <ul class="work-tags"><li>Power BI</li><li>DAX</li><li>Slicers</li><li>Google Sheets</li></ul>
-    </div>
-    <div class="visual" data-aos="fade-left">
-      <div class="fb"><i class="fa-solid fa-chart-column"></i><div class="metrics"><span class="m">4–10 person team</span><span class="m">Hours saved weekly</span></div></div>
-      <img src="images/funding-dashboard.png" alt="Funding scheme Power BI dashboard" onerror="this.remove()">
-    </div>
-  </article>
-
-  <article class="work-item rev">
-    <div class="work-body" data-aos="fade-up">
-      <span class="work-num">02 / Performance Management System UAT <span class="work-label">Client project</span></span>
-      <h3>Catching data and reporting issues before go-live.</h3>
-      <div class="work-ctx">Associate Data Analyst @ Healthark Insights · Oct 2025 → present</div>
-      <p>UAT and testing cycles for a client-facing Performance Management System, to confirm data and reporting accuracy before launch.</p>
-      <h4>My role</h4>
-      <p>Executed test cases, logged defects and coordinated with business, development and QA teams to close data and requirement gaps.</p>
-      <h4>Outcome</h4>
-      <p>50+ test cases executed, with 70% of the defects logged by me.</p>
-      <ul class="work-tags"><li>UAT</li><li>Test Case Design</li><li>Data Validation</li><li>Agile</li></ul>
-    </div>
-    <div class="visual" data-aos="fade-right">
-      <div class="fb"><i class="fa-solid fa-vial-circle-check"></i><div class="metrics"><span class="m">50+ test cases</span><span class="m">70% of defects logged</span></div></div>
-      <img src="images/uat.png" alt="UAT testing" onerror="this.remove()">
-    </div>
-  </article>
-
-  <article class="work-item">
-    <div class="work-body" data-aos="fade-up">
-      <span class="work-num">03 / Data Mapping &amp; Validation <span class="work-label">Client project</span></span>
-      <h3>Cleaner data from requirement to report.</h3>
-      <div class="work-ctx">Associate Data Analyst @ Healthark Insights · Oct 2025 → present</div>
-      <p>Data mapping, validation rules and database schema table design on a client-facing project to improve data quality, consistency and standardization.</p>
-      <h4>My role</h4>
-      <p>Mapped data, defined validation rules, contributed to schema design, and turned BRDs/FRDs into developer-ready specs backed by Draw.io workflow documentation.</p>
-      <h4>Outcome</h4>
-      <p>Data errors were located and corrected before they reached reporting, giving technical and non-technical stakeholders a clear shared logic.</p>
-      <ul class="work-tags"><li>Data Mapping</li><li>Validation Rules</li><li>Schema Design</li><li>BRD / FRD</li><li>Draw.io</li></ul>
-    </div>
-    <div class="visual" data-aos="fade-left">
-      <div class="fb"><i class="fa-solid fa-sitemap"></i><div class="metrics"><span class="m">Data mapping</span><span class="m">Validation rules</span></div></div>
-      <img src="images/data-mapping.png" alt="Data mapping workflow" onerror="this.remove()">
-    </div>
-  </article>
-</section>
 
 <!-- ABOUT -->
 <section id="about">
-  <h2 data-aos="fade-up">About Me</h2>
-  <div class="about-text">
-    <p id="animated-text"></p>
+<h2>About Me</h2>
+<div class="about-grid">
+  <div class="about-card">
+    <i class="fas fa-chart-line"></i>
+    <p>Business & Data Analysis</p>
   </div>
-  <div class="role-pair">
-    <img src="images/ba.svg" alt="BA - Business Analyst" data-aos="fade-up" data-aos-delay="100">
-    <img src="images/da.svg" alt="DA - Data Analyst" data-aos="fade-up" data-aos-delay="200">
+  <div class="about-card">
+    <i class="fas fa-briefcase"></i>
+    <p>Corporate & Consulting Experience</p>
   </div>
-  <div class="about-grid">
-    <div class="about-card" data-aos="fade-up" data-aos-delay="100">
-      <i class="fa-solid fa-chart-line"></i>
-      <h3>Dashboards &amp; Reporting</h3>
-      <p>Power BI dashboards adopted by a sales team.</p>
-    </div>
-    <div class="about-card" data-aos="fade-up" data-aos-delay="200">
-      <i class="fa-solid fa-sitemap"></i>
-      <h3>Data Mapping &amp; Quality</h3>
-      <p>Validation rules and schema design for cleaner data.</p>
-    </div>
-    <div class="about-card" data-aos="fade-up" data-aos-delay="300">
-      <i class="fa-solid fa-file-lines"></i>
-      <h3>Requirements &amp; UAT</h3>
-      <p>BRDs/FRDs turned into clear specs and tested before go-live.</p>
-    </div>
+  <div class="about-card">
+    <i class="fas fa-lightbulb"></i>
+    <p>Problem Solving & Strategy</p>
   </div>
+</div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
-  <h2 data-aos="fade-up">Work Experience</h2>
-  <div class="timeline">
-
-    <div class="job" data-aos="fade-up" data-aos-delay="100">
-      <h3>Associate Data Analyst</h3>
-      <div class="org">Healthark Insights, Ahmedabad (GJ)</div>
-      <span class="date">Oct 2025 – Present</span>
-      <ul>
-        <li>Performed data mapping and defined data validation rules to improve data quality, consistency and standardization on a client-facing project, correcting errors before they reached reporting.</li>
-        <li>Contributed to database schema table designs for structured, reliable working.</li>
-        <li>Elicited business requirements (BRDs/FRDs) and turned them into developer-ready data specifications, supported by Draw.io process and workflow documentation.</li>
-        <li>Supported UAT and testing for a client-facing Performance Management System, executing 50+ test cases and logging 70% of the defects.</li>
-        <li>Coordinated with business, development and QA teams to close data and requirement gaps and support accurate, on-time reporting.</li>
-        <li>Used AI tools (Claude, Google Gemini, Copilot Studio) to speed up documentation and validation.</li>
-      </ul>
-    </div>
-
-    <div class="job" data-aos="fade-up" data-aos-delay="200">
-      <h3>Data Intern (Business &amp; Research Analyst)</h3>
-      <div class="org">ConzultupIndia, Ahmedabad (GJ)</div>
-      <span class="date">Apr 2025 – Aug 2025</span>
-      <ul>
-        <li>Built an interactive Power BI dashboard with DAX measures, calculated columns and slicers for real-time filtering by eligibility, sector and funding stage. A 4–10 person sales team adopted it, saving several hours of manual reporting each week.</li>
-        <li>Migrated a funding scheme tracker from Excel to Google Sheets for multi-user data management and connected it to Power BI through live Google Drive integration.</li>
-        <li>Built trend-based financial models (market sizing, competitor benchmarking) for 10+ early-stage startups.</li>
-      </ul>
-    </div>
-
-    <div class="job" data-aos="fade-up" data-aos-delay="300">
-      <h3>Supply Chain &amp; Operations Executive</h3>
-      <div class="org">National Distributors, Satna (MP)</div>
-      <span class="date">Dec 2022 – Jul 2024</span>
-      <ul>
-        <li>Maintained and reconciled Creditors and Debtors ledgers, tracking payables and receivables and correcting discrepancies to support cash flow visibility.</li>
-        <li>Managed end-to-end purchase cycle (P2P) documentation, from quotation to order confirmation, procurement and delivery coordination.</li>
-        <li>Acted as the central point between vendors, principals and clients, tracking order status and resolving bottlenecks.</li>
-      </ul>
-    </div>
-
+<h2>Work Experience</h2>
+<div class="timeline">
+  <div class="job">
+    <h3>Business Analyst — Company Name</h3>
+    <p>Key achievements and impact.</p>
   </div>
+  <div class="job">
+    <h3>Role Title — Company Name</h3>
+    <p>Key responsibilities and results.</p>
+  </div>
+</div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-  <h2 data-aos="fade-down">Skills</h2>
-
-  <div class="skill-group">
-    <h3 data-aos="fade-up">Data Analytics &amp; BI</h3>
-    <div class="skills">
-      <div class="skill" data-aos="zoom-in" data-aos-delay="100"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftpowerbi.svg" alt="">Power BI</div>
-      <div class="skill" data-aos="zoom-in" data-aos-delay="100"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftexcel.svg" alt="">Excel &amp; Macros</div>
-      <div class="skill" data-aos="zoom-in" data-aos-delay="100"><i class="fa-solid fa-database"></i>SQL</div>
-      <div class="skill" data-aos="zoom-in" data-aos-delay="100"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/python.svg" alt="">Python (NumPy, pandas)</div>
-      <div class="skill" data-aos="zoom-in" data-aos-delay="100"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googleanalytics.svg" alt="">Google Analytics</div>
-      <div class="skill" data-aos="zoom-in" data-aos-delay="100"><i class="fa-solid fa-bolt"></i>DAX &amp; Power Query</div>
-    </div>
-  </div>
-
-  <div class="skill-group">
-    <h3 data-aos="fade-up">Data Quality &amp; Business Analysis</h3>
-    <div class="skills">
-      <div class="skill" data-aos="zoom-in"><i class="fa-solid fa-sitemap"></i>Data Mapping</div>
-      <div class="skill" data-aos="zoom-in"><i class="fa-solid fa-circle-check"></i>Validation Rules</div>
-      <div class="skill" data-aos="zoom-in"><i class="fa-solid fa-table"></i>Schema Design</div>
-      <div class="skill" data-aos="zoom-in"><i class="fa-solid fa-file-lines"></i>BRD / FRD</div>
-      <div class="skill" data-aos="zoom-in"><i class="fa-solid fa-vial-circle-check"></i>UAT &amp; Test Cases</div>
-      <div class="skill" data-aos="zoom-in"><i class="fa-solid fa-diagram-project"></i>Draw.io</div>
-    </div>
-  </div>
-
-  <div class="skill-group">
-    <h3 data-aos="fade-up">Agile, Tools &amp; AI</h3>
-    <div class="skills">
-      <div class="skill" data-aos="zoom-in"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/jira.svg" alt="">JIRA</div>
-      <div class="skill" data-aos="zoom-in"><i class="fa-solid fa-arrows-spin"></i>Agile / Scrum</div>
-      <div class="skill" data-aos="zoom-in"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="">GitHub</div>
-      <div class="skill" data-aos="zoom-in"><i class="fa-solid fa-robot"></i>Claude &amp; Claude Code</div>
-      <div class="skill" data-aos="zoom-in"><i class="fa-solid fa-wand-magic-sparkles"></i>Gemini &amp; Copilot Studio</div>
-    </div>
-  </div>
+<h2>Skills</h2>
+<div class="skills">
+  <div class="skill"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftpowerbi.svg">Power BI</div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftexcel.svg">Excel</div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/sqlite.svg">SQL</div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/tableau.svg">Tableau</div>
+</div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-  <h2 data-aos="fade-up-right">More Projects</h2>
-  <div class="projects">
-
-    <a class="project" data-aos="flip-up" href="project-1.html">
-      <i class="fa-solid fa-chart-column"></i>
-      <h3>Sales Performance Analysis</h3>
-      <p>Data cleaning and Power BI dashboards to improve sales visibility, identifying an 18% growth opportunity.</p>
-      <span class="more">Read case study →</span>
-    </a>
-
-    <div class="project" data-aos="flip-up" data-aos-delay="100">
-      <i class="fa-solid fa-arrows-rotate"></i>
-      <h3>Funding Tracker Migration</h3>
-      <p>Moved a tracker from Excel to Google Sheets and linked it to Power BI through live Google Drive integration.</p>
-      <span class="soon">Case study coming soon</span>
-    </div>
-
-    <div class="project" data-aos="flip-up" data-aos-delay="200">
-      <i class="fa-solid fa-chart-pie"></i>
-      <h3>Startup Financial Models</h3>
-      <p>Trend-based models covering market sizing and competitor benchmarking for 10+ early-stage startups.</p>
-      <span class="soon">Case study coming soon</span>
-    </div>
-
-  </div>
+<h2>Projects</h2>
+<div class="projects">
+  <a class="project" href="project-1.html">
+    <h3>Sales Performance Analysis</h3>
+    <p>Uncovering revenue trends & insights.</p>
+  </a>
+  <a class="project" href="project-2.html">
+    <h3>Customer Segmentation</h3>
+    <p>Data-driven audience insights.</p>
+  </a>
+</div>
 </section>
 
-<!-- EDUCATION & CERTIFICATIONS -->
-<section id="education">
-  <h2 data-aos="fade-down">Education &amp; Certifications</h2>
-  <div class="two">
-    <div class="panel" data-aos="fade-up">
-      <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
-      <div><b>PGDM (Big Data Analytics) · 2026</b><span>Adani Institute of Digital Technology Management, Gandhinagar (GJ)</span></div>
-      <div><b>B.Com Honours (CSP) · 2023</b><span>AKS University, Satna (MP) · 71%</span></div>
-      <div><b>HSC / 12th (CBSE) · 2020</b><span>St. Michael's Higher Secondary School, Satna (MP) · 73%</span></div>
-    </div>
-    <div class="panel" data-aos="fade-up" data-aos-delay="150">
-      <h3><i class="fa-solid fa-award"></i> Certifications</h3>
-      <p>✔ Statistical Analysis Using Excel (IBM)</p>
-      <p>✔ Data Visualization with Python (IBM)</p>
-      <p>✔ Python 101 for Data Science (IBM)</p>
-      <p>✔ Creating Charts &amp; Dashboards using Excel (Coursera)</p>
-      <p>✔ SQL for Beginners and Intermediate (HackerRank)</p>
-      <p>✔ Cloud Foundations (AWS Academy)</p>
-      <p>✔ Introduction to Product Management &amp; Market Research (Alison)</p>
-      <p>🏆 Techathon: contributed a technology solution in a 24-hour data and problem-solving challenge</p>
-    </div>
-  </div>
+<!-- CERTIFICATIONS -->
+<section>
+<h2>Certifications</h2>
+<div class="certs">
+  <p>✔ Microsoft Power BI Data Analyst</p>
+  <p>✔ Google Data Analytics Certificate</p>
+</div>
 </section>
 
 <!-- CONTACT -->
-<footer id="contact" data-aos="fade-up">
-  <h2>Let's Connect</h2>
-  <p>Open to data analyst and business analyst opportunities. Reach out by email or on LinkedIn.</p>
-  <div class="socials">
-    <a class="btn fill" href="mailto:Kajal.bhojwani01@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-    <a class="btn" href="https://www.linkedin.com/in/kajal-bhojwani-analyst" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-    <a class="btn" href="https://github.com/BhojwaniKajal" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
-  </div>
-  <p class="copy">Kajal.bhojwani01@gmail.com · © <span id="y"></span> Kajal Bhojwani</p>
+<footer id="contact">
+  <p>Email: yourname@email.com</p>
+  <p>Phone: +91 XXXXX XXXXX</p>
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  if (window.AOS) {
-    AOS.init({ duration: 900, easing: "ease-in-out", once: false, mirror: true, offset: 120 });
-  }
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const text = "Data Analyst skilled in SQL, Python, Excel and Power BI, building dashboards and reports that give teams cleaner data and faster decisions. Experienced in data mapping and UAT/testing across healthcare, clinical-data and business-research projects, working in Agile/Scrum with JIRA.";
-    const words = text.split(" ");
-    const el = document.getElementById("animated-text");
-    let i = 0;
-    function showWord() {
-      if (i < words.length) {
-        el.innerHTML += words[i] + " ";
-        i++;
-        setTimeout(showWord, 90);
-      }
-    }
-    showWord();
-  });
-</script>
-
-<script>
-  // Scroll progress bar
-  window.addEventListener('scroll', function () {
-    var h = document.documentElement;
-    var pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-    document.getElementById('progress').style.width = (pct || 0) + '%';
-  }, { passive: true });
-
-  // Rotating role text
-  (function () {
-    var roles = ['Data Analyst', 'Business Analyst', 'Power BI Dashboard Builder', 'Data Quality Specialist'];
-    var i = 0;
-    var el = document.getElementById('role-text');
-    if (!el) return;
-    setInterval(function () {
-      el.classList.add('fade-out');
-      setTimeout(function () {
-        i = (i + 1) % roles.length;
-        el.textContent = roles[i];
-        el.classList.remove('fade-out');
-      }, 400);
-    }, 2600);
-  })();
-</script>
 </body>
 </html>
